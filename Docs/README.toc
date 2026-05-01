@@ -10,5 +10,6 @@
 \contentsline {section}{Uživatelské rozhraní}{8}{section*.10}%
 \contentsline {section}{Běh aplikace}{9}{section*.11}%
 \contentsline {section}{Funkční vlastnosti a omezení}{10}{section*.12}%
-\contentsline {section}{Závěr}{10}{section*.13}%
-\contentsline {section}{Využití AI v projektu}{10}{section*.14}%
+\contentsline {section}{Využití AI v projektu}{10}{section*.13}%
+\contentsline {section}{Závěr}{10}{section*.14}%
+\contentsline {section}{Bibliografie}{11}{section*.15}%

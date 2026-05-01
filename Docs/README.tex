@@ -288,6 +288,10 @@ Současně má několik omezení:
 \item neimplementuje pokročilá pravidla, například bust nebo double-out
 \end{itemize}
 
+\docsection{Využití AI v projektu}
+
+Technické diagramy použité v této dokumentaci byly vytvořeny s pomocí generativní AI na základě textových promptů a následně vybrány a zasazeny do dokumentace tak, aby odpovídaly skutečné implementaci projektu. Přehled použitých promptů je uložen v souboru \texttt{AIPrompts.txt}.
+
 \docsection{Závěr}
 
 Využití jedné kamery se ukázalo jako dostatečné řešení pro demonstraci funkcionality a vytvoření funkčního prototypu. Výsledný systém dokáže správně určit přibližně 70 až 80 \% hozených šipek. Hlavní problémy představují proměnlivé osvětlení a překrývání jednotlivých šipek.
@@ -296,8 +300,23 @@ Z pohledu použité výpočetní platformy se zároveň ukazuje, že Raspberry P
 
 Projekt bude dále sloužit jako základ pro automatickou anotaci snímků hozených šipek. Takto anotovaná data budou následně využita pro natrénování neuronové sítě s využitím modelu YOLO. Tento přístup by mohl přinést přesnější odhad pozice šipky, lepší responzivitu systému a případně i snížení výpočetních nároků.
 
-\docsection{Využití AI v projektu}
+\clearpage
+\docsection{Bibliografie}
 
-Technické diagramy použité v této dokumentaci byly vytvořeny s pomocí generativní AI na základě textových promptů a následně vybrány a zasazeny do dokumentace tak, aby odpovídaly skutečné implementaci projektu. Přehled použitých promptů je uložen v souboru \texttt{AIPrompts.txt}.
+\begin{enumerate}
+\item WAVESHARE. \textit{3.5inch RPi LCD (B)} [online]. Waveshare Wiki. [cit. 2026-05-01]. Dostupné z: \url{https://www.waveshare.com/wiki/3.5inch_RPi_LCD_%28B%29}
+
+\item RASPBERRY PI LTD. \textit{Configuration - Raspberry Pi Documentation} [online]. Raspberry Pi Documentation. [cit. 2026-05-01]. Dostupné z: \url{https://www.raspberrypi.com/documentation/configuration/web-interface/raspberry-pi.html}
+
+\item REDMON, Joseph, SANTOSH DIVVALA, ROSS GIRSHICK a ALI FARHADI. \textit{You Only Look Once: Unified, Real-Time Object Detection} [online]. arXiv, 2016. DOI: \url{https://doi.org/10.48550/arXiv.1506.02640}. [cit. 2026-05-01]. Dostupné z: \url{https://arxiv.org/abs/1506.02640}
+
+\item ULTRALYTICS. \textit{Ultralytics YOLO Docs} [online]. Ultralytics Documentation. [cit. 2026-05-01]. Dostupné z: \url{https://docs.ultralytics.com/}
+
+\item OPENCV. \textit{Geometric Transformations of Images} [online]. OpenCV Documentation. [cit. 2026-05-01]. Dostupné z: \url{https://docs.opencv.org/4.x/da/d6e/tutorial_py_geometric_transformations.html}
+
+\item OPENCV. \textit{Geometric Image Transformations} [online]. OpenCV Documentation. [cit. 2026-05-01]. Dostupné z: \url{https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html}
+
+\item OPENCV. \textit{Contours: Getting Started} [online]. OpenCV Documentation. [cit. 2026-05-01]. Dostupné z: \url{https://docs.opencv.org/3.4/d4/d73/tutorial_py_contours_begin.html}
+\end{enumerate}
 
 \end{document}
