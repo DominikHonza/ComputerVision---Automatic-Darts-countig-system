@@ -15,6 +15,7 @@ SECTORS = [
 
 
 def load_calibration():
+    """Load calibration points and fall back to defaults when no file exists."""
 
     default_config = {
         "tl": [5, 62],
@@ -36,6 +37,7 @@ def load_calibration():
     return config
 
 def line_intersection(p1, p2, p3, p4):
+    """Return the intersection point of two lines defined by point pairs."""
 
     x1, y1 = p1
     x2, y2 = p2
@@ -48,7 +50,9 @@ def line_intersection(p1, p2, p3, p4):
     py = ((x1*y2 - y1*x2)*(y3-y4) - (y1-y2)*(x3*y4 - y3*x4)) / denom
 
     return [px, py]
+
 def normalize_board(frame, hit_point):
+    """Project a detected hit into normalized board space and score it."""
     img = frame.copy()
     calibration = load_calibration()
 
@@ -87,6 +91,7 @@ def normalize_board(frame, hit_point):
 
     # ===== PERSPEKTIVNÍ TRANSFORMACE =====
 
+    # Map the calibrated board outline into a fixed top-down coordinate system.
     M = cv2.getPerspectiveTransform(points, dst)
 
     warped = cv2.warpPerspective(img, M, (size, size))
@@ -107,6 +112,7 @@ def normalize_board(frame, hit_point):
     # vykreslení bodu
     cv2.circle(warped, (x, y), 8, (0,255,255), -1)
 
+    # Score is derived from radial distance for the ring and angle for the sector.
     dx = x - center[0]
     dy = y - center[1]
 

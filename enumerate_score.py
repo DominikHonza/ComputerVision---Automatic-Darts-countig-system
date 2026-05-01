@@ -6,6 +6,7 @@ SECTORS = [
 
 
 def get_ring_score(distance, board_radius):
+    """Map radial distance from the center to a dartboard ring label."""
 
     bull_inner = board_radius * 0.05
     bull_outer = board_radius * 0.09
@@ -35,6 +36,7 @@ def get_ring_score(distance, board_radius):
 
 ROTATION_OFFSET = 3
 def get_sector(dx, dy, angleOffset):
+    """Convert a hit vector into the corresponding dartboard sector number."""
 
     angle = math.degrees(math.atan2(-dy, dx))
 
@@ -50,6 +52,7 @@ def get_sector(dx, dy, angleOffset):
     return SECTORS[sector_index]
 
 def calculate_score(ring, sector):
+    """Convert a ring label and sector number into a numeric score."""
 
     if ring == "BULL":
         return 50

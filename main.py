@@ -41,7 +41,7 @@ print("Waiting for camera auto exposure...")
 FRAME_PATH = os.path.join(os.path.dirname(__file__), "frame.jpg")
 
 def nextPlayer ():
-    # sub players points
+    """Prepare the system for the next player and capture a fresh base frame."""
     display_calibration()
     for _ in range(20):
         cap.read()
@@ -51,6 +51,7 @@ def nextPlayer ():
     return base_frame
 
 def apply_score(darts):
+    """Subtract the current turn total from the active player's remaining score."""
 
     global player1, player2
 
@@ -65,6 +66,7 @@ def apply_score(darts):
         player2 -= total
 
 def switch_player():
+    """Toggle the active player between player 1 and player 2."""
 
     global currentPlayer
 
@@ -74,6 +76,7 @@ def switch_player():
         currentPlayer = 1
 
 def get_stable_frame(cap, samples=10):
+    """Average several frames to reduce noise and lighting flicker."""
 
     frames = []
 
@@ -94,6 +97,7 @@ def get_stable_frame(cap, samples=10):
 
 
 def save_calibration_frame(frame):
+    """Persist the latest empty-board reference frame for inspection."""
     cv2.imwrite(FRAME_PATH, frame)
     print(f"Saved calibration frame: {FRAME_PATH}")
 

@@ -8,6 +8,7 @@ HEIGHT = 320
 
 
 def format_dart(d):
+    """Convert an internal dart tuple into the short label shown on the LCD."""
 
     if d is None:
         return "X"
@@ -33,6 +34,7 @@ def format_dart(d):
 
 
 def display_score(darts, player1, player2, currentPlayer):
+    """Render current scores and turn darts, then write the image to fb1."""
 
     img = np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8)
 
@@ -111,6 +113,7 @@ def display_score(darts, player1, player2, currentPlayer):
 
 
 def display_calibration():
+    """Show the transition screen while a new reference frame is captured."""
 
     img = np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8)
 

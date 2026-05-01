@@ -5,13 +5,16 @@ frame_global = None
 
 
 def set_frame(frame):
+    """Expose the latest processed frame to the MJPEG streaming handler."""
     global frame_global
     frame_global = frame
 
 
 class StreamHandler(BaseHTTPRequestHandler):
+    """Simple MJPEG endpoint that continuously serves the latest frame."""
 
     def do_GET(self):
+        """Serve `/stream` as a multipart JPEG response."""
 
         if self.path != "/stream":
             self.send_response(404)
@@ -38,6 +41,7 @@ class StreamHandler(BaseHTTPRequestHandler):
 
 
 def start_stream_server(port=8888):
+    """Start the MJPEG HTTP server in a background thread."""
 
     server = HTTPServer(('0.0.0.0', port), StreamHandler)
 

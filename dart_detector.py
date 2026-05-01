@@ -4,8 +4,10 @@ from warp import normalize_board
 
 
 class DartDetector:
+    """Detects new dart hits by comparing the current frame to a base frame."""
 
     def __init__(self, base_frame):
+        """Precompute the blurred grayscale reference image used for differencing."""
 
         self.base = base_frame
         self.base_gray = cv2.cvtColor(base_frame, cv2.COLOR_BGR2GRAY)
@@ -13,6 +15,7 @@ class DartDetector:
 
 
     def process(self, frame):
+        """Return an annotated frame and a list of scored darts detected in it."""
 
         output = frame.copy()
 
@@ -56,6 +59,8 @@ class DartDetector:
 
             center = np.array([cx, cy])
 
+            # The tip is approximated as the contour point farthest from
+            # the contour centroid, which works well for elongated dart shapes.
             max_dist = 0
             tip = None
 
