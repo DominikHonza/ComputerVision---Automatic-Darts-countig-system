@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.22)  1 MAY 2026 14:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.22)  1 MAY 2026 14:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -457,7 +457,7 @@ Here is how much of TeX's memory you used:
  28493 multiletter control sequences out of 15000+600000
  474838 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,5n,63p,517b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,5n,63p,671b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/
 cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pf
@@ -465,7 +465,7 @@ b></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb
 >
-Output written on README.pdf (11 pages, 27080796 bytes).
+Output written on README.pdf (11 pages, 27081603 bytes).
 PDF statistics:
  190 PDF objects out of 1000 (max. 8388607)
  147 compressed objects within 2 object streams

@@ -292,6 +292,8 @@ Současně má několik omezení:
 
 Využití jedné kamery se ukázalo jako dostatečné řešení pro demonstraci funkcionality a vytvoření funkčního prototypu. Výsledný systém dokáže správně určit přibližně 70 až 80 \% hozených šipek. Hlavní problémy představují proměnlivé osvětlení a překrývání jednotlivých šipek.
 
+Z pohledu použité výpočetní platformy se zároveň ukazuje, že Raspberry Pi 4B je pro současnou jednokamerovou implementaci s USB kamerou Canyon CWC3 do určité míry kanón na vrabce. Prototyp na této platformě bez problémů běží a poskytuje dostatečnou rezervu pro vývoj i ladění, ale samotná úloha založená na jedné kameře a klasickém zpracování obrazu nevyužívá plný potenciál takto výkonného zařízení. To je důležité i z hlediska budoucí optimalizace, protože po zpřesnění algoritmů a stabilizaci celé pipeline bude možné uvažovat o nasazení na úspornější a levnější hardware.
+
 Projekt bude dále sloužit jako základ pro automatickou anotaci snímků hozených šipek. Takto anotovaná data budou následně využita pro natrénování neuronové sítě s využitím modelu YOLO. Tento přístup by mohl přinést přesnější odhad pozice šipky, lepší responzivitu systému a případně i snížení výpočetních nároků.
 
 \docsection{Využití AI v projektu}
