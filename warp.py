@@ -1,3 +1,14 @@
+"""Perspective normalization and scoring projection for dart hits.
+
+Author:
+    xhonza04 Dominik Honza
+
+Description:
+    This module loads calibration data, computes the perspective transform from
+    camera space into normalized board space, and evaluates the transformed hit
+    position using the scoring rules defined in ``enumerate_score.py``.
+"""
+
 import cv2
 import numpy as np
 from enumerate_score import get_ring_score, get_sector, calculate_score
@@ -15,7 +26,12 @@ SECTORS = [
 
 
 def load_calibration():
-    """Load calibration points and fall back to defaults when no file exists."""
+    """Load board calibration data from disk or use built-in defaults.
+
+    Returns:
+        dict: Calibration dictionary containing board corner coordinates and
+        angular offsets.
+    """
 
     default_config = {
         "tl": [5, 62],
@@ -37,7 +53,17 @@ def load_calibration():
     return config
 
 def line_intersection(p1, p2, p3, p4):
-    """Return the intersection point of two lines defined by point pairs."""
+    """Return the intersection point of two lines defined by point pairs.
+
+    Args:
+        p1: First point of line one.
+        p2: Second point of line one.
+        p3: First point of line two.
+        p4: Second point of line two.
+
+    Returns:
+        list: Intersection coordinates in the form ``[x, y]``.
+    """
 
     x1, y1 = p1
     x2, y2 = p2
@@ -52,7 +78,15 @@ def line_intersection(p1, p2, p3, p4):
     return [px, py]
 
 def normalize_board(frame, hit_point):
-    """Project a detected hit into normalized board space and score it."""
+    """Project a detected hit into normalized board space and score it.
+
+    Args:
+        frame: Current BGR image of the dartboard.
+        hit_point: Detected hit location in source image coordinates.
+
+    Returns:
+        tuple: Scored dart in the form ``(ring, sector, score)``.
+    """
     img = frame.copy()
     calibration = load_calibration()
 

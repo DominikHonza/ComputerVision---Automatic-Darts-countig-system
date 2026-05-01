@@ -1,13 +1,28 @@
+"""Dart detection utilities for the legacy single-camera darts system.
+
+Author:
+    xhonza04 Dominik Honza
+
+Description:
+    This module compares the current camera frame with a stored empty-board
+    reference frame, extracts candidate contours, estimates the dart tip, and
+    forwards the detected hit position to the scoring pipeline.
+"""
+
 import cv2
 import numpy as np
 from warp import normalize_board
 
 
 class DartDetector:
-    """Detects new dart hits by comparing the current frame to a base frame."""
+    """Detect new dart hits by comparing the current frame to a base frame."""
 
     def __init__(self, base_frame):
-        """Precompute the blurred grayscale reference image used for differencing."""
+        """Initialize the detector with a stable empty-board reference frame.
+
+        Args:
+            base_frame: Reference BGR image of the board without newly thrown darts.
+        """
 
         self.base = base_frame
         self.base_gray = cv2.cvtColor(base_frame, cv2.COLOR_BGR2GRAY)
@@ -15,7 +30,15 @@ class DartDetector:
 
 
     def process(self, frame):
-        """Return an annotated frame and a list of scored darts detected in it."""
+        """Process a new frame and return visualized detections with scores.
+
+        Args:
+            frame: Current BGR frame captured from the camera.
+
+        Returns:
+            tuple: Annotated output frame and a list of tuples in the form
+                ``(ring, sector, score)`` for each detected dart.
+        """
 
         output = frame.copy()
 

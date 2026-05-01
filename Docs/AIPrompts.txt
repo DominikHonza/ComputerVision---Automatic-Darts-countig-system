@@ -1,0 +1,100 @@
+AI prompts used for generated technical diagrams
+Project: Automatic darts scoring system
+Folder: Old/Docs
+
+1. PerspectiveTransform.png
+
+Create a clean technical documentation diagram that explains perspective transformation for a legacy single-camera darts scoring system.
+
+Show a two-panel layout on a white background.
+
+Left panel:
+a real camera view of a dartboard seen in perspective, slightly rotated and skewed, with four calibration corner points marked and labeled tl, tr, br, bl.
+Also show one detected dart tip point on the board in yellow.
+Draw a thin quadrilateral through the four calibration points.
+
+Center:
+a bold blue arrow labeled Perspective Transform.
+
+Right panel:
+a normalized top-down board view in an 800 x 800 coordinate space.
+Important: the source quadrilateral must map to these four destination points:
+- top -> (400, 0)
+- right -> (800, 400)
+- bottom -> (400, 800)
+- left -> (0, 400)
+
+Show that this creates a diamond-to-circle normalization layout, not a simple corner-to-corner square mapping.
+In the normalized view, show:
+- board center near (398, 400)
+- scoring radius R = 300
+- the transformed hit point in yellow
+- subtle concentric scoring rings
+- faint sector guide lines
+
+Add small labels:
+camera frame
+calibration points
+detected tip
+homography / perspective transform
+normalized board space
+transformed hit point
+
+Style:
+precise vector infographic, modern engineering documentation aesthetic, minimal, sharp lines, blue transform accents, red calibration points, yellow hit point, black and dark gray text, no decorative effects, no photorealism, no clutter, suitable for README documentation.
+
+2. DigramDartCount.png
+
+Create a technical scoring diagram for a dartboard hit in normalized coordinates for software documentation. Show a normalized 800x800 dartboard view with center near (398, 400) and board radius 300. Mark one example hit point and visualize how score is computed from both radial distance and angular sector.
+
+Show these exact scoring bands as labeled concentric rings based on board radius:
+- BULL: distance <= 5% of radius
+- OUTER_BULL: 5% to 9%
+- TRIPLE ring: 53% to 59%
+- DOUBLE ring: 88% to 95%
+- MISS: outside 95%
+- all remaining in-board regions are SINGLE
+
+Also show that sector is computed from the angle of the vector from center to hit point, using 20 sectors of 18 degrees each. Add a note that the angle comes from atan2(-dy, dx), then optional angle offset, then a rotation offset of 3 sectors. Show sector numbering in classic dartboard order:
+20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10, 6, 13, 4, 18, 1
+
+Include a worked example label in the diagram like:
+hit -> distance -> ring
+hit -> angle -> sector
+ring + sector -> final score
+
+Style: clean flat vector infographic, engineering documentation style, white background, thin precise lines, green for bull rings, blue for triple ring, red for double ring, orange highlighted hit vector, readable labels, no extra visual noise.
+
+3. Diagram.png
+
+Create a horizontal software pipeline diagram for a legacy automatic darts counting system using one camera. Show the full processing flow from left to right in 7 steps:
+
+1. Camera capture
+2. Stable reference frame averaging
+3. Current frame capture
+4. Frame differencing in grayscale using absdiff
+5. Threshold + dilation + contour detection
+6. Dart tip estimation as the contour point farthest from centroid
+7. Perspective normalization and score calculation
+
+Add a final output block that branches into:
+- live MJPEG preview stream
+- on-device score display
+
+Visually emphasize that the system compares the current blurred grayscale frame against a stored empty-board reference frame. Include tiny thumbnail-style panels for each stage: reference image, difference mask, contour bounding box, centroid-to-tip line, warped board, and final score label such as T20 or 25.
+
+Style: modern technical documentation infographic, flat vector, white background, restrained colors, blue for image-processing steps, orange for detected dart features, green for final score/output. Minimal, precise, easy to read, suitable for a README or system architecture document.
+
+4. Optional alternative perspective prompt
+
+Create a clean technical documentation diagram for a legacy single-camera darts scoring system. Show a real camera image of a dartboard in perspective on the left, with four calibration corner points marked and labeled: tl, tr, br, bl. Draw arrows from those four source points into a normalized board view on the right.
+
+Important: the destination is not a square-corner mapping. The four source points must map to the midpoints of a diamond-like target inside an 800x800 normalized view:
+- top source point maps to (400, 0)
+- right source point maps to (800, 400)
+- bottom source point maps to (400, 800)
+- left source point maps to (0, 400)
+
+Also show a detected dart tip in the source image and its transformed point in the normalized view. In the normalized view, overlay the board center near (398, 400), the circular scoring area radius 300, and subtle ring guides.
+
+Style: precise vector infographic, white background, black and dark gray lines, blue transform arrows, red calibration points, yellow transformed hit point, minimalist OpenCV / computer vision documentation aesthetic. Add short labels: camera frame, calibration points, perspective transform, normalized board space, transformed hit point. No decorative 3D effects, no photo collage, no clutter.

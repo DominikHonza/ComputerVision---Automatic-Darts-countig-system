@@ -1,3 +1,14 @@
+"""Framebuffer display helpers for the legacy darts scoring interface.
+
+Author:
+    xhonza04 Dominik Honza
+
+Description:
+    This module renders player scores, turn summaries, and calibration status
+    messages into an RGB image and writes the converted result to the LCD
+    framebuffer device.
+"""
+
 import cv2
 import numpy as np
 
@@ -8,7 +19,14 @@ HEIGHT = 320
 
 
 def format_dart(d):
-    """Convert an internal dart tuple into the short label shown on the LCD."""
+    """Convert an internal dart tuple into a short display label.
+
+    Args:
+        d: Dart tuple in the form ``(ring, sector, score)`` or ``None``.
+
+    Returns:
+        str: Compact label such as ``T20``, ``D8``, ``25``, ``50``, or ``X``.
+    """
 
     if d is None:
         return "X"
@@ -34,7 +52,14 @@ def format_dart(d):
 
 
 def display_score(darts, player1, player2, currentPlayer):
-    """Render current scores and turn darts, then write the image to fb1."""
+    """Render the current game state and write it to the LCD framebuffer.
+
+    Args:
+        darts: List of scored darts for the current turn.
+        player1: Remaining score of player 1.
+        player2: Remaining score of player 2.
+        currentPlayer: Active player identifier, typically ``1`` or ``2``.
+    """
 
     img = np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8)
 
@@ -113,7 +138,7 @@ def display_score(darts, player1, player2, currentPlayer):
 
 
 def display_calibration():
-    """Show the transition screen while a new reference frame is captured."""
+    """Show the calibration wait screen on the LCD display."""
 
     img = np.zeros((HEIGHT, WIDTH, 3), dtype=np.uint8)
 

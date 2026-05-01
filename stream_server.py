@@ -1,3 +1,13 @@
+"""MJPEG streaming support for the legacy darts camera preview.
+
+Author:
+    xhonza04 Dominik Honza
+
+Description:
+    This module exposes the latest processed frame through a lightweight HTTP
+    endpoint that serves a multipart MJPEG stream for remote monitoring.
+"""
+
 import cv2
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
@@ -5,7 +15,11 @@ frame_global = None
 
 
 def set_frame(frame):
-    """Expose the latest processed frame to the MJPEG streaming handler."""
+    """Expose the latest processed frame to the MJPEG streaming handler.
+
+    Args:
+        frame: Most recent annotated BGR frame to publish.
+    """
     global frame_global
     frame_global = frame
 
@@ -14,7 +28,7 @@ class StreamHandler(BaseHTTPRequestHandler):
     """Simple MJPEG endpoint that continuously serves the latest frame."""
 
     def do_GET(self):
-        """Serve `/stream` as a multipart JPEG response."""
+        """Serve ``/stream`` as a multipart JPEG response."""
 
         if self.path != "/stream":
             self.send_response(404)
@@ -41,7 +55,11 @@ class StreamHandler(BaseHTTPRequestHandler):
 
 
 def start_stream_server(port=8888):
-    """Start the MJPEG HTTP server in a background thread."""
+    """Start the MJPEG HTTP server in a background thread.
+
+    Args:
+        port: TCP port used by the HTTP streaming endpoint.
+    """
 
     server = HTTPServer(('0.0.0.0', port), StreamHandler)
 

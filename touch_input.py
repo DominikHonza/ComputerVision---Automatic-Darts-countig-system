@@ -1,3 +1,13 @@
+"""Touch input handling for player switching in the legacy darts system.
+
+Author:
+    xhonza04 Dominik Honza
+
+Description:
+    This module listens to the touchscreen input device and exposes a simple
+    edge-triggered flag so the main loop can react to player changes.
+"""
+
 from evdev import InputDevice, ecodes
 import threading
 
@@ -29,7 +39,11 @@ def start_touch():
 
 
 def check_touch():
-    """Return and clear the touch flag so one tap is handled only once."""
+    """Return and clear the touch flag so one tap is handled only once.
+
+    Returns:
+        bool: ``True`` if a new touch event was detected since the last check.
+    """
 
     global touch_detected
 

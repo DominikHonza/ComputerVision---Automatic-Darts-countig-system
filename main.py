@@ -1,3 +1,14 @@
+"""Main application entry point for the legacy single-camera darts system.
+
+Author:
+    xhonza04 Dominik Honza
+
+Description:
+    This module initializes the camera, acquires stable reference frames,
+    drives dart detection and scoring, updates the LCD display, handles player
+    switching via touch input, and exposes the processed output over MJPEG.
+"""
+
 from dart_detector import DartDetector
 from stream_server import start_stream_server, set_frame
 from display import display_score, display_calibration
@@ -41,7 +52,11 @@ print("Waiting for camera auto exposure...")
 FRAME_PATH = os.path.join(os.path.dirname(__file__), "frame.jpg")
 
 def nextPlayer ():
-    """Prepare the system for the next player and capture a fresh base frame."""
+    """Prepare the next player's turn and capture a new base frame.
+
+    Returns:
+        numpy.ndarray: Freshly averaged empty-board reference frame.
+    """
     display_calibration()
     for _ in range(20):
         cap.read()
@@ -51,7 +66,11 @@ def nextPlayer ():
     return base_frame
 
 def apply_score(darts):
-    """Subtract the current turn total from the active player's remaining score."""
+    """Subtract the current turn total from the active player's score.
+
+    Args:
+        darts: List of scored darts from the current turn.
+    """
 
     global player1, player2
 
@@ -76,7 +95,15 @@ def switch_player():
         currentPlayer = 1
 
 def get_stable_frame(cap, samples=10):
-    """Average several frames to reduce noise and lighting flicker."""
+    """Average several captured frames into one stable reference image.
+
+    Args:
+        cap: OpenCV video capture object.
+        samples: Number of frames to average.
+
+    Returns:
+        numpy.ndarray: Averaged BGR image cropped to the board area.
+    """
 
     frames = []
 
@@ -97,7 +124,11 @@ def get_stable_frame(cap, samples=10):
 
 
 def save_calibration_frame(frame):
-    """Persist the latest empty-board reference frame for inspection."""
+    """Persist the latest empty-board reference frame for inspection.
+
+    Args:
+        frame: BGR image to be saved as the current calibration frame.
+    """
     cv2.imwrite(FRAME_PATH, frame)
     print(f"Saved calibration frame: {FRAME_PATH}")
 

@@ -111,9 +111,12 @@ Detektor pracuje na principu rozdílu mezi referenčním obrazem prázdného ter
 
 Následující obrázky ukazují typické výstupy detekce:
 
-<img src="TargetHit.png" alt="Ukázka detekovaných šipek s konturami a popisem rozpoznaného zásahu." width="700">
-
-<img src="TargetMiss.png" alt="Ukázka detekovaných zásahů včetně případu vyhodnoceného jako miss." width="700">
+<table>
+  <tr>
+    <td><img src="TargetHit.png" alt="Ukázka detekovaných šipek s konturami a popisem rozpoznaného zásahu." width="420"></td>
+    <td><img src="TargetMiss.png" alt="Ukázka detekovaných zásahů včetně případu vyhodnoceného jako miss." width="420"></td>
+  </tr>
+</table>
 
 ## Kalibrace a perspektivní transformace
 
@@ -142,6 +145,10 @@ Význam položek:
 Kalibrační nástroj umožňuje měnit body a okamžitě kontrolovat, zda zarovnání sektorů a kružnic odpovídá reálnému terči:
 
 <img src="CalibrationTool.png" alt="Interaktivní kalibrační nástroj s původním obrazem, posuvníky a transformovaným náhledem terče." width="900">
+
+Následující diagram ilustruje samotný princip perspektivní transformace, tedy převod zásahu z pohledu kamery do jednotného normalizovaného prostoru terče:
+
+<img src="PerspectiveTransform.png" alt="Diagram perspektivní transformace z pohledu kamery do normalizovaného prostoru terče." width="900">
 
 Následující diagram ukazuje, jak je zásah převeden do normalizovaného prostoru terče a jak z této pozice vznikne finální skóre:
 
@@ -176,17 +183,19 @@ Dotykový LCD displej slouží jako jednoduché lokální rozhraní. Zobrazuje:
 
 Ukázky displeje:
 
-<img src="ScoreDisplay.jpeg" alt="Základní zobrazení skóre na lokálním LCD displeji." width="700">
+<table>
+  <tr>
+    <td><img src="ScoreDisplay.jpeg" alt="Základní zobrazení skóre na lokálním LCD displeji." width="280"></td>
+    <td><img src="ScoredDisplay.jpeg" alt="Zobrazení skóre po rozpoznání několika hodů." width="280"></td>
+    <td><img src="DisplayNextPlayer.jpeg" alt="Obrazovka informující o přechodu na dalšího hráče a probíhající kalibraci." width="280"></td>
+  </tr>
+</table>
 
-<img src="ScoredDisplay.jpeg" alt="Zobrazení skóre po rozpoznání několika hodů." width="700">
-
-Při přechodu na dalšího hráče je provedena rekalibrace referenčního snímku a displej zobrazí informační obrazovku:
-
-<img src="DisplayNextPlayer.jpeg" alt="Obrazovka informující o přechodu na dalšího hráče a probíhající kalibraci." width="700">
+Při přechodu na dalšího hráče je provedena rekalibrace referenčního snímku a displej zobrazí informační obrazovku.
 
 Ukázka celé sestavy během aktivního tahu:
 
-<img src="TargetScored.jpeg" alt="Terč a boční LCD displej během rozehraného tahu." width="900">
+<img src="TargetScoredHorizontal.jpeg" alt="Terč a boční LCD displej během rozehraného tahu." width="900">
 
 ## Běh aplikace
 
@@ -228,4 +237,10 @@ Současně má několik omezení:
 
 ## Závěr
 
-Projekt ukazuje, že Raspberry Pi lze úspěšně využít jako nízkonákladovou platformu pro zpracování obrazu a realizaci interaktivního systému pro automatické počítání skóre ve hře šipky. Jednokamerová verze v této složce představuje funkční prototyp, na kterém je možné dále stavět směrem k robustnějšímu řešení s více kamerami, přesnější lokalizací zásahu a rozšířeným herním rozhraním.
+Využití jedné kamery se ukázalo jako dostatečné řešení pro demonstraci funkcionality a vytvoření funkčního prototypu. Výsledný systém dokáže správně určit přibližně 70 až 80 % hozených šipek. Hlavní problémy představují proměnlivé osvětlení a překrývání jednotlivých šipek.
+
+Projekt bude dále sloužit jako základ pro automatickou anotaci snímků hozených šipek. Takto anotovaná data budou následně využita pro natrénování neuronové sítě s využitím modelu YOLO. Tento přístup by mohl přinést přesnější odhad pozice šipky, lepší responzivitu systému a případně i snížení výpočetních nároků. Do budoucna by tak bylo možné uvažovat i o nasazení na méně výkonné platformě, například Raspberry Pi Pico s podporou neuronových sítí.
+
+## Využití AI v projektu
+
+Technické diagramy použité v této dokumentaci byly vytvořeny s pomocí generativní AI na základě textových promptů a následně vybrány a zasazeny do dokumentace tak, aby odpovídaly skutečné implementaci projektu. Přehled použitých promptů je uložen v souboru `AIPrompts.txt`.
