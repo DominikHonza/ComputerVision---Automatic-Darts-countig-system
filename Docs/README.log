@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.22)  1 MAY 2026 14:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.2.22)  1 MAY 2026 15:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -368,7 +368,7 @@ l.42 \clearpage
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-5.
+7.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [3
@@ -377,7 +377,7 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 <Diagram.png, id=102, 1923.185pt x 824.07875pt>
 File: Diagram.png Graphic file (type png)
 <use Diagram.png>
-Package pdftex.def Info: Diagram.png  used on input line 140.
+Package pdftex.def Info: Diagram.png  used on input line 142.
 (pdftex.def)             Requested size: 511.86491pt x 219.3229pt.
  [4
 
@@ -385,17 +385,17 @@ Package pdftex.def Info: Diagram.png  used on input line 140.
 <TargetHit.png, id=115, 597.73312pt x 549.55313pt>
 File: TargetHit.png Graphic file (type png)
 <use TargetHit.png>
-Package pdftex.def Info: TargetHit.png  used on input line 159.
+Package pdftex.def Info: TargetHit.png  used on input line 161.
 (pdftex.def)             Requested size: 216.62482pt x 199.16928pt.
 <TargetMiss.png, id=117, 613.54219pt x 584.93532pt>
 File: TargetMiss.png Graphic file (type png)
 <use TargetMiss.png>
-Package pdftex.def Info: TargetMiss.png  used on input line 160.
+Package pdftex.def Info: TargetMiss.png  used on input line 162.
 (pdftex.def)             Requested size: 208.91052pt x 199.16928pt.
 <CalibrationTool.png, id=118, 1321.18594pt x 1018.55531pt>
 File: CalibrationTool.png Graphic file (type png)
 <use CalibrationTool.png>
-Package pdftex.def Info: CalibrationTool.png  used on input line 181.
+Package pdftex.def Info: CalibrationTool.png  used on input line 183.
 (pdftex.def)             Requested size: 441.01772pt x 339.99422pt.
  [5
 
@@ -403,14 +403,14 @@ Package pdftex.def Info: CalibrationTool.png  used on input line 181.
 <PerspectiveTransform.png, id=125, 1678.27pt x 944.52875pt>
 File: PerspectiveTransform.png Graphic file (type png)
 <use PerspectiveTransform.png>
-Package pdftex.def Info: PerspectiveTransform.png  used on input line 187.
+Package pdftex.def Info: PerspectiveTransform.png  used on input line 189.
 (pdftex.def)             Requested size: 441.01772pt x 248.19472pt.
 
 [6 <./CalibrationTool.png> <./PerspectiveTransform.png (PNG copy)>]
 <DigramDartCount.png, id=132, 1258.7025pt x 1258.7025pt>
 File: DigramDartCount.png Graphic file (type png)
 <use DigramDartCount.png>
-Package pdftex.def Info: DigramDartCount.png  used on input line 209.
+Package pdftex.def Info: DigramDartCount.png  used on input line 211.
 (pdftex.def)             Requested size: 441.01772pt x 441.01343pt.
  [7
 
@@ -418,22 +418,22 @@ Package pdftex.def Info: DigramDartCount.png  used on input line 209.
 <ScoreDisplay.jpeg, id=137, 1376.0208pt x 1032.0156pt>
 File: ScoreDisplay.jpeg Graphic file (type jpg)
 <use ScoreDisplay.jpeg>
-Package pdftex.def Info: ScoreDisplay.jpeg  used on input line 227.
+Package pdftex.def Info: ScoreDisplay.jpeg  used on input line 229.
 (pdftex.def)             Requested size: 149.37697pt x 112.02608pt.
 <ScoredDisplay.jpeg, id=138, 1376.0208pt x 1032.0156pt>
 File: ScoredDisplay.jpeg Graphic file (type jpg)
 <use ScoredDisplay.jpeg>
-Package pdftex.def Info: ScoredDisplay.jpeg  used on input line 228.
+Package pdftex.def Info: ScoredDisplay.jpeg  used on input line 230.
 (pdftex.def)             Requested size: 149.37697pt x 112.02608pt.
 <DisplayNextPlayer.jpeg, id=139, 1376.0208pt x 1032.0156pt>
 File: DisplayNextPlayer.jpeg Graphic file (type jpg)
 <use DisplayNextPlayer.jpeg>
-Package pdftex.def Info: DisplayNextPlayer.jpeg  used on input line 229.
+Package pdftex.def Info: DisplayNextPlayer.jpeg  used on input line 231.
 (pdftex.def)             Requested size: 149.37697pt x 112.02608pt.
 <TargetScoredHorizontal.jpeg, id=140, 5733.42pt x 4300.065pt>
 File: TargetScoredHorizontal.jpeg Graphic file (type jpg)
 <use TargetScoredHorizontal.jpeg>
-Package pdftex.def Info: TargetScoredHorizontal.jpeg  used on input line 237.
+Package pdftex.def Info: TargetScoredHorizontal.jpeg  used on input line 239.
 (pdftex.def)             Requested size: 441.01772pt x 330.75829pt.
  [8
 
@@ -442,28 +442,22 @@ getScoredHorizontal.jpeg>]
 <WholeSystem.jpeg, id=145, 4300.065pt x 3754.025pt>
 File: WholeSystem.jpeg Graphic file (type jpg)
 <use WholeSystem.jpeg>
-Package pdftex.def Info: WholeSystem.jpeg  used on input line 266.
+Package pdftex.def Info: WholeSystem.jpeg  used on input line 268.
 (pdftex.def)             Requested size: 511.86491pt x 446.85481pt.
- [9 <./WholeSystem.jpeg>] [10
+ [9 <./WholeSystem.jpeg>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 293.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 293.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 293.
+ [10
 
-]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 307.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 307.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 307.
- [11
+] [11
 
 ] (./README.aux)
-
-Package rerunfilecheck Warning: File `README.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `README.out':
-(rerunfilecheck)             Before: 146B5E7BDCDDEACF401DE27D698F0D95;1992
-(rerunfilecheck)             After:  C249898A05A9546B43232350C3855ABE;1992.
+Package rerunfilecheck Info: File `README.out' has not changed.
+(rerunfilecheck)             Checksum: C249898A05A9546B43232350C3855ABE;1992.
  ) 
 Here is how much of TeX's memory you used:
  10490 strings out of 478287
@@ -472,7 +466,7 @@ Here is how much of TeX's memory you used:
  28506 multiletter control sequences out of 15000+600000
  477960 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,5n,63p,671b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,5n,63p,671b,419s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/
 cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pf
@@ -480,10 +474,10 @@ b></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/
 fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/c
 m-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on README.pdf (12 pages, 27116650 bytes).
+Output written on README.pdf (12 pages, 27117408 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
+ 228 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
  42 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 
