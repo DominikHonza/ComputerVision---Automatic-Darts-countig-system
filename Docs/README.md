@@ -13,7 +13,7 @@ Projekt demonstruje možnosti využití platformy Raspberry Pi v oblasti:
 
 Tato složka obsahuje starší jednokamerovou verzi systému. Přestože zadání obecně počítá s jednou nebo více USB kamerami, zde popsaná implementace používá jednu kameru a slouží jako funkční základ pro automatickou detekci zásahů a bodování.
 
-<img src="WholeSystem.jpeg" alt="Fyzické uspořádání jednokamerového systému s terčem, osvětlením a bočním displejem." width="900">
+<img src="WholeSystem.jpeg" alt="Fyzické uspořádání jednokamerového systému s terčem, osvětlením a bočním displejem." style="display:block; width:72%; max-width:700px; height:auto; margin:0 auto;">
 
 ## Cíl řešení
 
@@ -24,7 +24,7 @@ Základní princip systému spočívá v tom, že prostor před terčem je průb
 - rozpozná bull a outer bull
 - vypočítá odpovídající bodovou hodnotu
 
-Zpracované informace jsou zobrazovány na dotykovém displeji Waveshare 3.5" LCD, který slouží zejména pro:
+Zpracované informace jsou zobrazovány na dotykovém displeji [Waveshare 3.5" LCD B 320x480 s rezistivní dotykovou vrstvou](https://rpishop.cz/lcd-oled-displeje-hat/1203-waveshare-35-lcd-b-displej-320480-dotykovy-rezistivni.html?msclkid=4a6799ecda6f1137f7b9f0184b84918c), který slouží zejména pro:
 
 - zobrazování aktuálního skóre
 - přehled hráčů
@@ -36,8 +36,8 @@ Zpracované informace jsou zobrazovány na dotykovém displeji Waveshare 3.5" LC
 Řešení v této složce předpokládá následující sestavu:
 
 - Raspberry Pi 4 Model B
-- jedna USB kamera
-- dotykový displej připojený jako framebuffer `/dev/fb1`
+- USB kamera Canyon CWC3 3 Megapixel USB 2.0 s mikrofonem
+- dotykový displej [Waveshare 3.5" LCD B 320x480](https://rpishop.cz/lcd-oled-displeje-hat/1203-waveshare-35-lcd-b-displej-320480-dotykovy-rezistivni.html?msclkid=4a6799ecda6f1137f7b9f0184b84918c) připojený jako framebuffer `/dev/fb1`
 - dotykový vstup dostupný přes `/dev/input/event0`
 - lokální síť pro MJPEG náhled
 
@@ -66,6 +66,7 @@ Implementace je rozdělena do několika částí:
 - [stream_server.py](stream_server.py:1) zpřístupňuje zpracovaný obraz jako MJPEG stream
 - [touch_input.py](touch_input.py:1) obsluhuje dotykový vstup
 - [calibration.json](calibration.json:1) ukládá kalibrační body a úhel natočení terče
+- [CalibrationGUI/](../CalibrationGUI) obsahuje samostatné grafické rozhraní pro kalibraci terče a ladění transformačních bodů
 
 ## Princip realizace
 
@@ -143,6 +144,8 @@ Význam položek:
 - `score_angle` lze volitelně použít pro jemné doladění mapování sektorů
 
 Kalibrační nástroj umožňuje měnit body a okamžitě kontrolovat, zda zarovnání sektorů a kružnic odpovídá reálnému terči:
+
+Součástí projektu je také samostatná složka [CalibrationGUI/](../CalibrationGUI), která obsahuje dedikované Calibration GUI pro pohodlné nastavování kalibračních bodů a ověřování perspektivní transformace mimo hlavní běh aplikace.
 
 <img src="CalibrationTool.png" alt="Interaktivní kalibrační nástroj s původním obrazem, posuvníky a transformovaným náhledem terče." width="900">
 

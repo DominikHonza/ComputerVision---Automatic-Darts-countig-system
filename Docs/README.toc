@@ -1,0 +1,14 @@
+\babel@toc {czech}{}\relax 
+\contentsline {section}{Popis projektu}{2}{section*.2}%
+\contentsline {section}{Cíl řešení}{2}{section*.3}%
+\contentsline {section}{Použitý hardware a software}{3}{section*.4}%
+\contentsline {section}{Struktura řešení}{3}{section*.5}%
+\contentsline {section}{Princip realizace}{4}{section*.6}%
+\contentsline {section}{Detekce zásahu}{5}{section*.7}%
+\contentsline {section}{Kalibrace a perspektivní transformace}{5}{section*.8}%
+\contentsline {section}{Výpočet skóre}{7}{section*.9}%
+\contentsline {section}{Uživatelské rozhraní}{8}{section*.10}%
+\contentsline {section}{Běh aplikace}{9}{section*.11}%
+\contentsline {section}{Funkční vlastnosti a omezení}{10}{section*.12}%
+\contentsline {section}{Závěr}{10}{section*.13}%
+\contentsline {section}{Využití AI v projektu}{10}{section*.14}%
